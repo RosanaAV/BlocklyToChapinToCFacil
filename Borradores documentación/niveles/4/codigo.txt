@@ -1,0 +1,116 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="W^oV%?XmHt6qr*pv/3Gf" x="63" y="63">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="wb%g]Y|fmhDB/4Z;-b4+">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="0D%;fUF*bk4kDYa;nm8k">
+            <field name="TEXT">Introduce un número</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="Ao_eE9W6o6r%b4fd0=*v">
+        <field name="VAR">y</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="/4w1N[0,EoOMQmpCvF+L">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="c2wy~m[Dz:d]$WtBq`$o">
+                <field name="TEXT">Introduce otro número</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="n`k@LhdaG#Xk%l@zO,K^">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="d!$=T9omB`b6Itj0!Vzb">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id=".V.sZA}N1UOt|u1AUK?X">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="itm/ljnX_??Rr.LuIc,e">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="text_print" id="sHq07AKGf4.*,H._nv5y">
+                <value name="TEXT">
+                  <shadow type="text" id="s%amIq*eaUy1?Wrc+Z:`">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="bkR|A@:!dsqe%WBA[=s~">
+                    <mutation items="4"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="^gT}76H(_t4HXG)If*gr">
+                        <field name="TEXT">El número </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id=":.)`qQ2?xLkRx0C:{j6{">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="hdhzxne-^v(Zjbwl$,E~">
+                        <field name="TEXT"> es mayor que el número </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="variables_get" id="EVQKgn^r]=ENG{q[!+M0">
+                        <field name="VAR">y</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="text_print" id="$xj=4_D_C$wX,Y6-.F/`">
+                <value name="TEXT">
+                  <shadow type="text" id="s%amIq*eaUy1?Wrc+Z:`">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="cAs^3weU9cy#{i#+EmIy">
+                    <mutation items="4"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="%9!oZ,PZ)j(S(0!f.Yl9">
+                        <field name="TEXT">El número </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id="F-SCtg`}m2;drZmm[=rf">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="(C}3eadFu.G8)8Q!c2aG">
+                        <field name="TEXT"> no es mayor que el número </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="variables_get" id="R/VbZwZwVR6j*/~,+i8M">
+                        <field name="VAR">y</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
