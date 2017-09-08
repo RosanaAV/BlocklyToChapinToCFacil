@@ -1,0 +1,126 @@
+/*
+Nivel 1 del tfg
+En este nivel se crea el parser para una sentencia que muestra una frase por pantalla	
+*/
+
+options {
+	//DEBUG_TOKEN_MANAGER=true;
+    BUILD_TOKEN_MANAGER=true;
+    COMMON_TOKEN_ACTION=false;
+}
+
+/*Aqui se define la clase que implementará el parser
+Se abre el fichero a analizar y se imprime por pantalla el resultado de los análisis
+*/
+PARSER_BEGIN(practica)
+
+public class practica {
+    	public static void main(String args[]) throws java.io.FileNotFoundException {
+                      // throws ParseException // this is only thrown in the parser
+    		
+    		practicaTokenManager tkmngr;
+			
+        
+			if ( args.length < 1 ) {
+       	         		tkmngr = new practicaTokenManager(new SimpleCharStream(System.in));//entrada por teclado
+        		} else {	
+                 		tkmngr = new practicaTokenManager(new SimpleCharStream( new java.io.FileInputStream(args[0]),0,0 ));//si se abre un archivo
+    			};
+	 
+			Token tk;
+
+    			try {
+        			while ( (tk = tkmngr.getNextToken()).kind != EOF )  ; //lector de lexicos
+
+    			} catch (TokenMgrError x) {
+          			System.out.println("Error, Algo salio mal.\n"); //si se produce eun fallo 
+          			throw x;
+    			};
+
+			//Resultados finales
+ 	   		//System.out.println("\n"+tkmngr.texto);
+           		
+    	}
+	}
+PARSER_END(practica)
+
+//Declaración de variables
+TOKEN_MGR_DECLS:
+{
+	static String cabecera = new String();
+	static String texto = new String();
+}
+
+
+//Declaración de tokens
+TOKEN:
+{
+	< Name: ( <NameStarChar> )( <NameChar> )* >
+	| < #NameChar: ( <NameStarChar> )|"-"|"."|["0"-"9"]|"\u00B7" >
+	| < #NameStarChar: ["A"-"Z"]|"_"|["a"-"z"]|["\u00C0"-"\u00D6"]|["\u00D8"-"\u00F6"] >
+	| < #S: (" " | "\t" | "\n" | "\r")+ >
+	| < Entero: ("-")?(["0"-"9"])+ >
+	| < Flotante: ("-")?((["0"-"9"])+ | (["0"-"9"])+ "."(["0"-"9"]))+((["e","E"])(["-","+"])?(["0"-"9"])+)? >
+}
+
+//Declaración de los estados iniciales
+TOKEN :	
+{
+	< ETIXML: "<xml" > {
+		System.out.println("#define PROGRAMA \"Nivel 1\"");
+		System.out.println("#define DESCRIPCION \"Programa generado automaticamente para TFG_BlocklyToChapinToCFacil\"");
+		System.out.println("#define AUTOR \"Rosana Arnaiz Vicario\"");
+		System.out.println("#define VERSION  \"v1.0\"");
+		System.out.println("\n#include \"c_facil.h\"");
+		System.out.println("\n\nPRG(){");
+	} : XML
+}
+
+
+<XML>TOKEN:
+{
+   	< ETIBLOQUE: "<block" > : BLOQUE					
+}
+
+<BLOQUE>SKIP:
+{
+	< "/block>" > : BLOQUE
+}
+
+<BLOQUE>TOKEN:
+{
+	<"/xml>" > {System.out.println("\n}");} : DEFAULT
+	|< ETIPRINT: (<S>)?"type=\"text_print\""(<S>)? > : PRINT
+	|< ETIFIN: (<S>)?"</value"(<S>)? > {System.out.printf(texto + "\");");} : BLOQUE
+	|< ETITEXT: (<S>)?"type=\"text\""(<S>)?"TEXT\">" > : TEXT1
+}
+
+<PRINT>TOKEN:
+{
+	<TEXTOPRINT: (<S>)?"field name=\"TEXT\">" > {System.out.printf("escribeFrase(\"");} : TEXT
+}
+
+<TEXT>TOKEN:
+{
+	< CARACTER: (~["<"])* > {
+			texto = new String(image);	
+			//System.out.printf(texto);
+			//System.out.printf("\");");
+	} : BLOQUE
+}	
+
+<TEXT1>TOKEN:
+{
+	< CARACTER2: (~["<"])* > {
+			texto = new String(image);	
+			//System.out.printf(texto);
+			//System.out.printf("\");");
+	} : BLOQUE
+	
+}
+
+//En cualquier estado, si encuentra cualquier caracter no hace nada
+<*>SKIP :
+{
+   <~[]>
+}
