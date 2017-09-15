@@ -55,93 +55,103 @@ public interface practicaConstants {
   /** RegularExpression Id. */
   int ETIVALUENAMEB = 23;
   /** RegularExpression Id. */
-  int TEXTOPRINT = 24;
+  int ETIVALUE = 24;
   /** RegularExpression Id. */
-  int TEXT2 = 25;
+  int ETIFINVALUE = 25;
   /** RegularExpression Id. */
-  int CARACTER = 26;
+  int ETINAMEVALUE = 26;
   /** RegularExpression Id. */
-  int ETITEXT = 27;
+  int FINBLO = 27;
   /** RegularExpression Id. */
-  int ETIPRINTNUM = 28;
+  int TEXTOPRINT = 28;
   /** RegularExpression Id. */
-  int ETIBLOCKGET = 29;
+  int TEXT2 = 29;
   /** RegularExpression Id. */
-  int ETIFINVALUE = 30;
+  int CARACTER = 30;
   /** RegularExpression Id. */
-  int ETIMATHARITHMETIC2 = 31;
+  int ETITEXT = 31;
   /** RegularExpression Id. */
-  int CARACTER2 = 32;
+  int ETIPRINTNUM = 32;
   /** RegularExpression Id. */
-  int CARACTER3 = 33;
+  int ETIBLOCKGET = 33;
   /** RegularExpression Id. */
-  int CARACTER4 = 34;
+  int ETIFINVALU = 34;
   /** RegularExpression Id. */
-  int CARACTER5 = 35;
+  int ETIMATHARITHMETIC2 = 35;
   /** RegularExpression Id. */
-  int CARACTER8 = 36;
+  int CARACTER2 = 36;
   /** RegularExpression Id. */
-  int CARACTER9 = 37;
+  int CARACTER3 = 37;
   /** RegularExpression Id. */
-  int FINVALUE = 38;
+  int CARACTER4 = 38;
   /** RegularExpression Id. */
-  int VARGET = 39;
+  int CARACTER5 = 39;
   /** RegularExpression Id. */
-  int ETIMUTATION = 40;
+  int CARACTER8 = 40;
   /** RegularExpression Id. */
-  int ETIMUTATIONTEXT = 41;
+  int CARACTER9 = 41;
   /** RegularExpression Id. */
-  int CARACTER6 = 42;
+  int FINVALUE = 42;
   /** RegularExpression Id. */
-  int CARACTER7 = 43;
+  int VARGET = 43;
   /** RegularExpression Id. */
-  int ETINUMBERPROMPT = 44;
+  int ETIMATHARITHMETIC3 = 44;
   /** RegularExpression Id. */
-  int ETIFINVALUEPROMPT = 45;
+  int ETIMUTATION = 45;
   /** RegularExpression Id. */
-  int CARACTER10 = 46;
+  int ETIMUTATIONTEXT = 46;
   /** RegularExpression Id. */
-  int CARACTER11 = 47;
+  int CARACTER6 = 47;
   /** RegularExpression Id. */
-  int NOMFUN = 48;
+  int CARACTER7 = 48;
   /** RegularExpression Id. */
-  int ARGUMENTOS = 49;
+  int ETINUMBERPROMPT = 49;
   /** RegularExpression Id. */
-  int NOMBRE = 50;
+  int ETIFINVALUEPROMPT = 50;
   /** RegularExpression Id. */
-  int ARGUM = 51;
+  int CARACTER10 = 51;
   /** RegularExpression Id. */
-  int DESCRIPCI = 52;
+  int CARACTER11 = 52;
   /** RegularExpression Id. */
-  int DESCRIPC = 53;
+  int NOMFUN = 53;
   /** RegularExpression Id. */
-  int DESCRIPCION = 54;
+  int ARGUMENTOS = 54;
   /** RegularExpression Id. */
-  int STATEM = 55;
+  int NOMBRE = 55;
   /** RegularExpression Id. */
-  int NOMBREFUN = 56;
+  int ARGUM = 56;
   /** RegularExpression Id. */
-  int FUNC = 57;
+  int DESCRIPCI = 57;
   /** RegularExpression Id. */
-  int FINLLAMAFUNCION = 58;
+  int DESCRIPC = 58;
   /** RegularExpression Id. */
-  int ARGUMENTO = 59;
+  int DESCRIPCION = 59;
   /** RegularExpression Id. */
-  int LLFVAR = 60;
+  int STATEM = 60;
   /** RegularExpression Id. */
-  int LLFTEXT = 61;
+  int NOMBREFUN = 61;
   /** RegularExpression Id. */
-  int LLFARG = 62;
+  int FUNC = 62;
   /** RegularExpression Id. */
-  int FINLLFUNCION = 63;
+  int FINLLAMAFUNCION = 63;
   /** RegularExpression Id. */
-  int OPADD = 64;
+  int ARGUMENTO = 64;
   /** RegularExpression Id. */
-  int OPMINUS = 65;
+  int LLFVAR = 65;
   /** RegularExpression Id. */
-  int OPMULTIPLY = 66;
+  int LLFTEXT = 66;
   /** RegularExpression Id. */
-  int OPDIVIDE = 67;
+  int LLFARG = 67;
+  /** RegularExpression Id. */
+  int FINLLFUNCION = 68;
+  /** RegularExpression Id. */
+  int OPADD = 69;
+  /** RegularExpression Id. */
+  int OPMINUS = 70;
+  /** RegularExpression Id. */
+  int OPMULTIPLY = 71;
+  /** RegularExpression Id. */
+  int OPDIVIDE = 72;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -150,67 +160,69 @@ public interface practicaConstants {
   /** Lexical state. */
   int BLOQUE = 2;
   /** Lexical state. */
-  int PRINT = 3;
+  int FINBLOQUE = 3;
   /** Lexical state. */
-  int TEXT1 = 4;
+  int PRINT = 4;
   /** Lexical state. */
-  int TEXT = 5;
+  int TEXT1 = 5;
   /** Lexical state. */
-  int SIGUIENTE = 6;
+  int TEXT = 6;
   /** Lexical state. */
-  int NOM = 7;
+  int SIGUIENTE = 7;
   /** Lexical state. */
-  int NOMVAR = 8;
+  int NOM = 8;
   /** Lexical state. */
-  int NOM2 = 9;
+  int NOMVAR = 9;
   /** Lexical state. */
-  int NOMVAR2 = 10;
+  int NOM2 = 10;
   /** Lexical state. */
-  int NUM = 11;
+  int NOMVAR2 = 11;
   /** Lexical state. */
-  int NUM2 = 12;
+  int NUM = 12;
   /** Lexical state. */
-  int SIG = 13;
+  int NUM2 = 13;
   /** Lexical state. */
-  int TEXTPROMPT = 14;
+  int SIG = 14;
   /** Lexical state. */
-  int FRASEPROMPT = 15;
+  int TEXTPROMPT = 15;
   /** Lexical state. */
-  int FRASEPROMPT2 = 16;
+  int FRASEPROMPT = 16;
   /** Lexical state. */
-  int FRASEPROMPT3 = 17;
+  int FRASEPROMPT2 = 17;
   /** Lexical state. */
-  int TEXTOPROMPT = 18;
+  int FRASEPROMPT3 = 18;
   /** Lexical state. */
-  int TEXTOPROMPT2 = 19;
+  int TEXTOPROMPT = 19;
   /** Lexical state. */
-  int FUNCION = 20;
+  int TEXTOPROMPT2 = 20;
   /** Lexical state. */
-  int NOMFUNCION = 21;
+  int FUNCION = 21;
   /** Lexical state. */
-  int ARGUN = 22;
+  int NOMFUNCION = 22;
   /** Lexical state. */
-  int DESCRIPCIONFUNCION = 23;
+  int ARGUN = 23;
   /** Lexical state. */
-  int DES = 24;
+  int DESCRIPCIONFUNCION = 24;
   /** Lexical state. */
-  int DESCRIP = 25;
+  int DES = 25;
   /** Lexical state. */
-  int STATEMENT = 26;
+  int DESCRIP = 26;
   /** Lexical state. */
-  int LLAMAFUNCION = 27;
+  int STATEMENT = 27;
   /** Lexical state. */
-  int LLAMAFUN = 28;
+  int LLAMAFUNCION = 28;
   /** Lexical state. */
-  int ARGUMENTOSFUN = 29;
+  int LLAMAFUN = 29;
   /** Lexical state. */
-  int ARGU = 30;
+  int ARGUMENTOSFUN = 30;
   /** Lexical state. */
-  int NOMVARLLF = 31;
+  int ARGU = 31;
   /** Lexical state. */
-  int FINLLF = 32;
+  int NOMVARLLF = 32;
   /** Lexical state. */
-  int OP = 33;
+  int FINLLF = 33;
+  /** Lexical state. */
+  int OP = 34;
 
   /** Literal token values. */
   String[] tokenImage = {
@@ -225,7 +237,7 @@ public interface practicaConstants {
     "\"<block type=\\\"procedures_defnoreturn\"",
     "\"<block\"",
     "\"/xml>\"",
-    "\"/block>\"",
+    "<ETIFINBLOQUE>",
     "<ETIPRINT>",
     "<ETIVARSET>",
     "<ETIPROMPT>",
@@ -238,13 +250,17 @@ public interface practicaConstants {
     "<ETIMATHARITHMETIC>",
     "<ETIMATHNUMBER>",
     "<ETIVALUENAMEB>",
+    "<ETIVALUE>",
+    "<ETIFINVALUE>",
+    "<ETINAMEVALUE>",
+    "<FINBLO>",
     "<TEXTOPRINT>",
     "<TEXT2>",
     "<CARACTER>",
     "<ETITEXT>",
     "<ETIPRINTNUM>",
     "<ETIBLOCKGET>",
-    "<ETIFINVALUE>",
+    "<ETIFINVALU>",
     "<ETIMATHARITHMETIC2>",
     "<CARACTER2>",
     "<CARACTER3>",
@@ -254,6 +270,7 @@ public interface practicaConstants {
     "<CARACTER9>",
     "<FINVALUE>",
     "<VARGET>",
+    "<ETIMATHARITHMETIC3>",
     "<ETIMUTATION>",
     "<ETIMUTATIONTEXT>",
     "<CARACTER6>",
@@ -282,7 +299,7 @@ public interface practicaConstants {
     "\"field name=\\\"OP\\\">MINUS\"",
     "\"field name=\\\"OP\\\">MULTIPLY\"",
     "\"field name=\\\"OP\\\">DIVIDE\"",
-    "<token of kind 68>",
+    "<token of kind 73>",
   };
 
 }

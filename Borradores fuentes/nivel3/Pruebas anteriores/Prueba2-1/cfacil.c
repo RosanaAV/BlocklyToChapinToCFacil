@@ -7,6 +7,6 @@
 
 
 PRG(){
-escribeNumero(0escribeFrase("Prueba con un número");
+escribeNumero(0escribeFrase("Prueba con un número"));
 
 }

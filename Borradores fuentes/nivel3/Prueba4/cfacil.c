@@ -8,7 +8,7 @@
 
 /*Función que muestra por pantalla el texto "¡Hola!"*/
 PROCEDIMIENTO area_rectangulo(ladoA,ladoB) {
-escribeNumero(productoNumeros(ladoA,ladoB));
+escribeNumero(productoNumeros(1,ladoB));
 }
 
 PRG(){
