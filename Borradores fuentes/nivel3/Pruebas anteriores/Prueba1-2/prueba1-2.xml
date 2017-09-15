@@ -1,0 +1,12 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="y#DzdH!HbHOBrP8`XVMG" x="38" y="63">
+    <value name="TEXT">
+      <shadow type="text" id="7OlZ)ta(RM)FO#8zBJvC">
+        <field name="TEXT">Hola mundo</field>
+      </shadow>
+      <block type="text" id="4:L3Y|mdTO8(:4}_[@h-">
+        <field name="TEXT">Hola mundo</field>
+      </block>
+    </value>
+  </block>
+</xml>

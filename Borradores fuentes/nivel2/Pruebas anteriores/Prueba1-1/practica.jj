@@ -74,10 +74,10 @@ TOKEN:
 TOKEN :	
 {
 	< ETIXML: "<xml" > {
-		System.out.println("#define PROGRAMA \"Nivel 2\"");
-		System.out.println("#define DESCRIPCION \"Programa generado automaticamente para TFG_BlocklyToChapinToCFacil\"");
-		System.out.println("#define AUTOR \"Rosana Arnaiz Vicario\"");
-		System.out.println("#define VERSION  \"v1.0\"");
+		System.out.println("//#define PROGRAMA \"Nivel 2\"");
+		System.out.println("//#define DESCRIPCION \"Programa del nivel 2\"");
+		System.out.println("//#define AUTOR \"Programa generado automaticamente para TFG_BlocklyToChapinToCFacil\"");
+		System.out.println("//#define VERSION  \"v1.0\"");
 		System.out.println("\n#include \"c_facil.h\"");
 		System.out.println("\n\nPRG(){");
 	} : XML
@@ -95,7 +95,6 @@ TOKEN :
 	|< ETIFINBLOQUE: "/block>" > {if(next==0){System.out.printf(");\n");}} : BLOQUE
 	|< ETIPRINT: (<S>)?"type=\"text_print\""(<S>)? > : PRINT
 	|< ETIFIN: (<S>)?"</value"(<S>)? > : BLOQUE
-	|< ETITEXT: (<S>)?"type=\"text\""(<S>)? > : TEXT1
 	|< ETIVARSET: (<S>)?"type=\"variables_set\""(<S>)? > {System.out.printf("asignaValorA(");} : NOM
 	|< ETIPROMPT:(<S>)?"type=\"text_prompt_ext\""(<S>)? > : TEXTPROMPT
 	|< ETINEXT: (<S>)?"next" > {if(next==1){System.out.printf(");\n");};next=1;} : BLOQUE
@@ -122,7 +121,7 @@ TOKEN :
 
 <SIGUIENTE>TOKEN:
 {
-	<ETINUMBER: (<S>)?"block type=\"math_number\""(<S>)? > {System.out.printf("escribeNumero(");} : NUM
+	<ETITEXT: (<S>)?"block type=\"text\""(<S>)? > : TEXT1
 	|<ETIBLOCKGET: (<S>)?"block type=\"variables_get\""(<S>)? > {System.out.printf("escribeNumero(");} : NOM2
 	|<ETIFINVALUE: (<S>)?"</value"(<S>)? > {System.out.printf("escribeFrase(\""+texto+"\"");} : BLOQUE
 }

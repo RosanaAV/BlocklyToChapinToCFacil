@@ -1,0 +1,431 @@
+/*
+Nivel 3 del tfg
+En este nivel se crea el parser para la llamada a una función
+*/
+
+options {
+	//DEBUG_TOKEN_MANAGER=true;
+    BUILD_TOKEN_MANAGER=true;
+    COMMON_TOKEN_ACTION=false;
+}
+
+/*Aqui se define la clase que implementará el parser
+Se abre el fichero a analizar y se imprime por pantalla el resultado de los análisis
+*/
+PARSER_BEGIN(practica)
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class practica {
+    	public static void main(String args[]) throws java.io.FileNotFoundException {
+                      // throws ParseException // this is only thrown in the parser
+    		
+    		practicaTokenManager tkmngr;
+			
+        
+			if ( args.length < 1 ) {
+       	         		tkmngr = new practicaTokenManager(new SimpleCharStream(System.in));//entrada por teclado
+        		} else {	
+                 		tkmngr = new practicaTokenManager(new SimpleCharStream( new java.io.FileInputStream(args[0]),0,0 ));//si se abre un archivo
+    			};
+	 
+			Token tk;
+
+    			try {
+        			while ( (tk = tkmngr.getNextToken()).kind != EOF )  ; //lector de lexicos
+
+    			} catch (TokenMgrError x) {
+          			System.out.println("Error, Algo salio mal.\n"); //si se produce eun fallo 
+          			throw x;
+    			};
+
+			//Resultados finales
+ 	   		//System.out.println("\n"+tkmngr.texto);
+           		
+    	}
+	}
+PARSER_END(practica)
+
+//Declaración de variables
+TOKEN_MGR_DECLS:
+{
+	static String texto = new String();
+	static String variable = new String();
+	static String variable2 = new String();
+	static String variable3 = new String();
+	static String variable4 = new String();
+	static String nombreFuncion = new String();
+	static String descripcionFuncion = new String();
+	static String nombreFuncion2 = new String();
+	static List<String> argumentosFuncion = new ArrayList<String>();
+	static List<String> argumentosLLFuncion = new ArrayList<String>();
+	static int finBlock=0;
+	static int numBloques=0;
+	static int next=0;
+	static int argFuncion=100;
+	static int argument=0;
+	static int arg=0;
+	static int llfuncion=0;
+	static int mutationLLF=0;
+	static int esTexto=0;
+	static int esMA=0;
+	static int esVB=1;
+	static int vbllf=0;
+	static int esvbllf=0;
+	static int numValues=0;
+	static int value=0;
+	static int parentesis=0;
+	static int valueB=0;
+	
+	
+	
+}
+
+
+//Declaración de tokens
+TOKEN:
+{
+	< Name: ( <NameStarChar> )( <NameChar> )* >
+	| < #NameChar: ( <NameStarChar> )|"-"|"."|["0"-"9"]|"\u00B7" >
+	| < #NameStarChar: ["A"-"Z"]|"_"|["a"-"z"]|["\u00C0"-"\u00D6"]|["\u00D8"-"\u00F6"] >
+	| < #S: (" " | "\t" | "\n" | "\r")+ >
+	| < Entero: ("-")?(["0"-"9"])+ >
+	| < Flotante: ("-")?((["0"-"9"])+ | (["0"-"9"])+ "."(["0"-"9"]))+((["e","E"])(["-","+"])?(["0"-"9"])+)? >
+}
+
+//Declaración de los estados iniciales
+TOKEN :	
+{
+	< ETIXML: "<xml" > {
+		System.out.println("//#define PROGRAMA \"Nivel 3\"");
+		System.out.println("//#define DESCRIPCION \"Programa del nivel 3\"");
+		System.out.println("//#define AUTOR \"Programa generado automaticamente para TFG_BlocklyToChapinToCFacil\"");
+		System.out.println("//#define VERSION  \"v1.0\"");
+		System.out.println("\n#include \"c_facil.h\"");
+	} : XML
+}
+
+
+<XML>TOKEN:
+{
+   	<ETIFUNCION: "<block type=\"procedures_defnoreturn" > : FUNCION					
+	|< ETIBLOQUE: "<block" > {System.out.println("\n\nPRG(){");} : BLOQUE					
+}
+
+<BLOQUE>TOKEN:
+{
+	< ETIFINXML: "/xml>" > {System.out.printf("\n}");} : DEFAULT
+	|< ETIFINBLOQUE: (<S>)?"</block" > : FINBLOQUE
+	|< ETIPRINT: (<S>)?"type=\"text_print\""(<S>)? > {numBloques++;} : PRINT
+	|< ETIVARSET: (<S>)?"type=\"variables_set\""(<S>)? > {System.out.printf("asignaValorA(");numBloques++;parentesis++;} : NOM
+	|< ETIPROMPT:(<S>)?"type=\"text_prompt_ext\""(<S>)? > {numBloques++;} : TEXTPROMPT
+	|< ETINEXT: (<S>)?"next" > {numBloques=0;} : BLOQUE //if(next==1){System.out.printf(");\n");};next=1;
+	|< ETIVARGET : (<S>)?"type=\"variables_get\""(<S>)? > {numBloques++;if(vbllf==1){esvbllf=1;}} : NOM
+	//|< ETIFINNEXT: (<S>)?"/next" > {System.out.printf(");\n");} : BLOQUE //igual no sirve para nada
+	|< ETIFINSTATEMENT: (<S>)?"/statement>" > {System.out.printf("}");numBloques=0;} : XML
+	|< ETILLAMAFUNCION: (<S>)?"type=\"procedures_callnoreturn" > {argFuncion=0;numBloques++;arg=0;llfuncion=1;} : LLAMAFUNCION		
+	|< ETIARGUMENTOS: (<S>)?"value name=\"ARG" > {arg++;mutationLLF=0;numValues++;} : ARGU
+	|< ETIFINLLAMAFUNCION: (<S>)?"alue" > {
+			if(llfuncion==1){
+				if(argFuncion==arg){
+					if(esTexto==1){
+						System.out.printf("(");
+						parentesis++;
+						if(argumentosLLFuncion.size()>1){
+							for ( int i=0; i < argumentosLLFuncion.size() - 1; i++){
+								System.out.printf("\""+argumentosLLFuncion.get(i)+"\",");
+							}
+						}
+						System.out.printf("\""+argumentosLLFuncion.get(argumentosLLFuncion.size()-1)+"\"");
+					}else{
+						System.out.printf("(");
+						parentesis++;
+						if(argumentosLLFuncion.size()>1){
+							for ( int i=0; i < argumentosLLFuncion.size() - 1; i++){
+								System.out.printf(argumentosLLFuncion.get(i)+",");
+							}
+						}
+						System.out.printf(argumentosLLFuncion.get(argumentosLLFuncion.size()-1));
+					}
+					llfuncion=0;
+					esTexto=0;
+				}
+			}
+		} : BLOQUE
+	|< ETIMATHARITHMETIC: (<S>)?"type=\"math_arithmetic\""(<S>)? > {esMA=1;esVB=0;}: OP
+	|< ETIMATHNUMBER: (<S>)?"type=\"math_number\""(<S>)? > : NUM
+	|< ETIVALUENAMEB: (<S>)?"value name=\"B\">" > {System.out.printf(",");esVB=1;vbllf=1;numBloques--;numValues++;valueB=1;} : BLOQUE  //numBloques--;???
+	|< ETIVALUE: (<S>)?"value"(<S>)? > {numValues++;}: BLOQUE
+	|< ETIFINVALUE: (<S>)?"/value"(<S>)? > {numValues--;}: BLOQUE
+	|< ETINAMEVALUE: (<S>)?"name=\"VALUE"(<S>)? > {value=numValues;System.out.printf(", ");}: BLOQUE
+}
+
+<FINBLOQUE>TOKEN:
+{
+	<FINBLO: (<S>)?">"(<S>)? > {  //System.out.printf("**"+parentesis+"**");
+		/*if(esVB==1){
+			if(mutationLLF==1){
+				System.out.printf(";");
+			}else if(esvbllf==1 && numBloques>1){
+				numBloques--;
+				esvbllf=0;
+			}else if(numBloques>1){
+				if(esMA==1){
+					System.out.printf(")");
+					esMA=0;
+				}
+				System.out.printf(")");
+				numBloques--;
+			}else if(numBloques==1){
+				if(esMA==1){
+					System.out.printf(")");
+					esMA=0;
+				}
+				System.out.printf(");\n");
+				numBloques--;
+			}
+		}else{
+			numBloques--;
+		}*/
+		if(mutationLLF==1){
+			System.out.printf(";");
+		}else if(parentesis>1){
+			System.out.printf(")");
+			if(valueB==1){
+				System.out.printf(");\n");
+				parentesis--;
+				valueB=0;
+			}
+			parentesis--;
+		}else if(parentesis==1){
+			System.out.printf(");\n");
+			parentesis--;
+		}
+	} : BLOQUE
+}
+
+
+<PRINT>TOKEN:
+{
+	<TEXTOPRINT: (<S>)?"field name=\"TEXT\">" > : TEXT
+}
+
+<TEXT1>TOKEN:
+{
+	<TEXT2: (<S>)?"TEXT\">" > : TEXT
+}
+
+<TEXT>TOKEN:
+{
+	< CARACTER: (~["<"])* > {
+			texto = new String(image);
+	} : SIGUIENTE
+}	
+
+<SIGUIENTE>TOKEN:
+{
+	<ETITEXT: (<S>)?"block type=\"text\""(<S>)? > : TEXT1
+	|<ETIPRINTNUM: (<S>)?"block type=\"math_number\""(<S>)? > {System.out.printf("escribeNumero(");parentesis++;} : NUM
+	|<ETIBLOCKGET: (<S>)?"block type=\"variables_get\""(<S>)? > {System.out.printf("escribeNumero(");parentesis++;if(vbllf==1){esvbllf=1;}} : NOM2
+	|<ETIFINVALU: (<S>)?"</value"(<S>)? > {System.out.printf("escribeFrase(\""+texto+"\"");parentesis++;numValues--;} : BLOQUE
+	|<ETIMATHARITHMETIC2: (<S>)?"type=\"math_arithmetic\""(<S>)? > {System.out.printf("escribeNumero(");parentesis++;esMA=1;esVB=0;} : OP
+}
+
+<NOM>TOKEN:
+{
+	<CARACTER2: (<S>)?"VAR\">" > : NOMVAR
+}
+
+<NOMVAR>TOKEN:
+{
+	< CARACTER3: (~["<"])* > {
+			variable = new String(image);
+			System.out.printf(variable);
+	} : BLOQUE	
+}
+
+<NOM2>TOKEN:
+{
+	<CARACTER4: (<S>)?"VAR\">" > : NOMVAR2
+}
+
+<NOMVAR2>TOKEN:
+{
+	< CARACTER5: (~["<"])* > {
+			variable2 = new String(image);
+			System.out.printf(variable2);
+	} : BLOQUE	
+}
+
+<NUM>TOKEN:
+{
+	<CARACTER8: (<S>)?"NUM\">" > : NUM2
+}
+
+<NUM2>TOKEN:
+{
+	< CARACTER9: (~["<"])* > {
+			variable4 = new String(image);
+	} : SIG	
+}
+
+<SIG>TOKEN:
+{
+	<FINVALUE: (<S>)?"/value"(<S>)? > {System.out.printf(variable4);numValues--;} : BLOQUE
+	|<VARGET: (<S>)?"block type=\"variables_get"(<S>)? > {numBloques++;if(vbllf==1){esvbllf=1;}} : NOM
+	|<ETIMATHARITHMETIC3: (<S>)?"type=\"math_arithmetic\""(<S>)? > {esMA=1;esVB=0;} : OP
+}
+
+<TEXTPROMPT>TOKEN:
+{
+	<ETIMUTATION: (<S>)?"mutation type=\"NUMBER"(<S>)? > {
+			System.out.printf("pideNumero(\"");	
+			parentesis++;			
+	} : FRASEPROMPT
+	|<ETIMUTATIONTEXT: (<S>)?"mutation type=\"TEXT"(<S>)? > {
+			System.out.printf("pideCaracter(\"");	
+			parentesis++;
+	} : FRASEPROMPT
+}
+
+<FRASEPROMPT>TOKEN:
+{
+	<CARACTER6: (<S>)?"field name=\"TEXT\">" > : FRASEPROMPT2
+}
+
+<FRASEPROMPT2>TOKEN:
+{
+	< CARACTER7: (~["<"])* > {
+		variable3 = new String(image);
+	} : FRASEPROMPT3
+}
+
+<FRASEPROMPT3>TOKEN:
+{
+	<ETINUMBERPROMPT: (<S>)?"block type=\"text\""(<S>)? > : TEXTOPROMPT
+	|<ETIFINVALUEPROMPT: (<S>)?"</value"(<S>)? > {System.out.printf(variable3+"\")");numBloques--;numValues--;parentesis--;} : BLOQUE
+}
+
+
+<TEXTOPROMPT>TOKEN:
+{
+	<CARACTER10: (<S>)?"TEXT\">" > : TEXTOPROMPT2
+}
+
+<TEXTOPROMPT2>TOKEN:
+{
+	< CARACTER11: (~["<"])* > {
+			variable3 = new String(image);
+	} : FRASEPROMPT3
+}	
+
+<FUNCION>TOKEN:
+{
+	<NOMFUN: (<S>)?"NAME\">" > : NOMFUNCION
+	|<ARGUMENTOS: (<S>)?"arg name=\"" > {argument=1;} : ARGUN
+}
+
+<NOMFUNCION>TOKEN:
+{
+	< NOMBRE: (~["<"])* > {
+		nombreFuncion = new String(image);
+	} : DESCRIPCIONFUNCION
+}
+
+<ARGUN>TOKEN:
+{
+	< ARGUM: (~["\""])* > {
+		argumentosFuncion.add(new String(image));
+	} : FUNCION
+}
+
+<DESCRIPCIONFUNCION>TOKEN:
+{
+	<DESCRIPCI: (<S>)?"comment pinned"(<S>)? > : DES
+}
+
+<DES>TOKEN:
+{
+	<DESCRIPC: (<S>)?">" > : DESCRIP
+}
+
+<DESCRIP>TOKEN:
+{
+	< DESCRIPCION: (~["<"])* > {
+			descripcionFuncion = new String(image);
+	} : STATEMENT
+}
+
+<STATEMENT>TOKEN:
+{
+	<STATEM: (<S>)?"statement"(<S>)? > {
+		System.out.printf("\n\n/*");
+		System.out.printf(descripcionFuncion);
+		System.out.printf("*/");
+		System.out.printf("\nPROCEDIMIENTO "+nombreFuncion);
+		if(argument==0){
+			System.out.printf(" {\n");
+		}else{
+			System.out.printf("(");
+			if(argumentosFuncion.size()>1){
+				for ( int i=0; i < argumentosFuncion.size() - 1; i++){
+					System.out.printf(argumentosFuncion.get(i)+",");
+				}
+			}
+			System.out.printf(argumentosFuncion.get(argumentosFuncion.size()-1)+") {\n");
+		}		
+	}: BLOQUE
+}
+
+<LLAMAFUNCION>TOKEN:
+{
+	<NOMBREFUN: (<S>)?"mutation name=\"" > : LLAMAFUN
+}
+
+<LLAMAFUN>TOKEN:
+{
+	< FUNC: (~["\""])* > {
+			nombreFuncion2 = new String(image);
+			System.out.printf(nombreFuncion2);
+	} : ARGUMENTOSFUN
+}
+
+<ARGUMENTOSFUN>TOKEN:
+{
+	<FINLLAMAFUNCION: (<S>)?"/mutation"(<S>)? > {mutationLLF=1;} : BLOQUE
+	|<ARGUMENTO: (<S>)?"arg name"(<S>)? > {argFuncion++;} : ARGUMENTOSFUN
+}
+
+<ARGU>TOKEN:
+{
+	<LLFVAR: (<S>)?"VAR\">" > : NOMVARLLF
+	|<LLFTEXT: (<S>)?"TEXT\">" > {esTexto=1;} : NOMVARLLF
+}
+
+<NOMVARLLF>TOKEN:
+{
+	< LLFARG: (~["<"])* > {
+			argumentosLLFuncion.add(new String(image));
+	} : FINLLF	
+}
+
+<FINLLF>TOKEN:
+{
+	<FINLLFUNCION: "</v" > : BLOQUE
+}
+
+<OP>TOKEN:
+{
+	<OPADD: "field name=\"OP\">ADD" > {System.out.printf("sumaNumeros(");parentesis++;} : BLOQUE
+	|<OPMINUS: "field name=\"OP\">MINUS" > {System.out.printf("restaNumeros(");parentesis++;} : BLOQUE
+	|<OPMULTIPLY: "field name=\"OP\">MULTIPLY" > {System.out.printf("productoNumeros(");parentesis++;} : BLOQUE
+	|<OPDIVIDE: "field name=\"OP\">DIVIDE" > {System.out.printf("cocienteNumeros(");parentesis++;} : BLOQUE
+}
+
+//En cualquier estado, si encuentra cualquier caracter no hace nada
+<*>SKIP :
+{
+   <~[]>
+}
