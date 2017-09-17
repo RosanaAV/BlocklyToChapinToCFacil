@@ -1,5 +1,5 @@
-//#define PROGRAMA "Nivel 3"
-//#define DESCRIPCION "Programa del nivel 3"
+//#define PROGRAMA "Nivel 2"
+//#define DESCRIPCION "Programa del nivel 2"
 //#define AUTOR "Programa generado automaticamente para TFG_BlocklyToChapinToCFacil"
 //#define VERSION  "v1.0"
 
@@ -7,7 +7,7 @@
 
 
 PRG(){
-escribeNumero(0);
-escribeFrase("Prueba con un número");
+asignaValorA(x);
+);
 
 }

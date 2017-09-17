@@ -1,0 +1,10 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="]pN|E6zI8Ex4r5K9yD%B" x="113" y="113">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="math_number" id="6eGA!yv~E*L.vG@fYpRb">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+  </block>
+</xml>

@@ -121,11 +121,11 @@ TOKEN :
 	|< ETIPRINT: (<S>)?"type=\"text_print\""(<S>)? > {numBloques++;} : PRINT
 	|< ETIVARSET: (<S>)?"type=\"variables_set\""(<S>)? > {System.out.printf("asignaValorA(");numBloques++;parentesis++;} : NOM
 	|< ETIPROMPT:(<S>)?"type=\"text_prompt_ext\""(<S>)? > {numBloques++;} : TEXTPROMPT
-	|< ETINEXT: (<S>)?"next" > {numBloques=0;} : BLOQUE //if(next==1){System.out.printf(");\n");};next=1;
+	|< ETINEXT: (<S>)?"next" > {numBloques=0;} : FINBLOQUE //if(next==1){System.out.printf(");\n");};next=1;
 	|< ETIVARGET : (<S>)?"type=\"variables_get\""(<S>)? > {numBloques++;if(vbllf==1){esvbllf=1;}} : NOM
 	//|< ETIFINNEXT: (<S>)?"/next" > {System.out.printf(");\n");} : BLOQUE //igual no sirve para nada
 	|< ETIFINSTATEMENT: (<S>)?"/statement>" > {System.out.printf("}");numBloques=0;} : XML
-	|< ETILLAMAFUNCION: (<S>)?"type=\"procedures_callnoreturn" > {argFuncion=0;numBloques++;arg=0;llfuncion=1;} : LLAMAFUNCION		
+	|< ETILLAMAFUNCION: (<S>)?"type=\"procedures_callnoreturn" > {argFuncion=0;numBloques++;arg=0;llfuncion=1;argumentosLLFuncion=new ArrayList<String>();} : LLAMAFUNCION		
 	|< ETIARGUMENTOS: (<S>)?"value name=\"ARG" > {arg++;mutationLLF=0;numValues++;} : ARGU
 	|< ETIFINLLAMAFUNCION: (<S>)?"alue" > {
 			if(llfuncion==1){

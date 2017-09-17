@@ -7,7 +7,8 @@
 
 
 PRG(){
-escribeNumero(0);
-escribeFrase("Prueba con un número");
-
+asignaValorA(x, sumaNumeros(restaNumeros(y),cocienteNumeros(y));
+,z);
+,productoNumeros(y);
+,z
 }

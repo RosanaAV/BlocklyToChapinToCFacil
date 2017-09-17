@@ -7,7 +7,6 @@
 
 
 PRG(){
-escribeNumero(0);
-escribeFrase("Prueba con un número");
+escribeNumero(productoNumeros(ladoA),ladoB);
 
 }

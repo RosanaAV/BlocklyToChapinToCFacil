@@ -1,0 +1,28 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block type="text_print" id="sNL?t~NtKHjsR32+1$Xq">
+        <value name="TEXT">
+          <shadow type="text" id="(=r8b0o)yF.%p-u;YL~e">
+            <field name="TEXT">¡Hola!</field>
+          </shadow>
+          <block type="math_arithmetic" id="b$.UdWs671gMh^wvt)?n">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="`zFzwCzqF5)a7Lb.0-jk">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="*IhKK?:,~}O2/[C%#kfH">
+                <field name="VAR">ladoA</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="2[4Ke%Ct^cT~kZr|INx:">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="5s{Ky/F_XKz*P%/)6!~(">
+                <field name="VAR">ladoB</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+</xml>
