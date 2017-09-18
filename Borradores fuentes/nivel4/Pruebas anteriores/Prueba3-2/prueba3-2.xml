@@ -1,0 +1,21 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="S(B29be._so_4%O`Xogl" x="38" y="38">
+    <field name="NAME">saludo</field>
+    <comment pinned="false" h="80" w="160">Función que muestra por pantalla el texto "¡Hola!"</comment>
+    <statement name="STACK">
+      <block type="text_print" id="sNL?t~NtKHjsR32+1$Xq">
+        <value name="TEXT">
+          <shadow type="text" id="(=r8b0o)yF.%p-u;YL~e">
+            <field name="TEXT">¡Hola!</field>
+          </shadow>
+          <block type="text" id=".8wb=s$|{DkFMx9FbpUf">
+            <field name="TEXT">¡Hola!</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_callnoreturn" id="@CL{qcyeax(#9e.^zc+}" x="38" y="138">
+    <mutation name="saludo"></mutation>
+  </block>
+</xml>

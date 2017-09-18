@@ -1,0 +1,31 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="wmD:lNtGD[3@e!?+_0C%" x="38" y="38">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="R3M~/PTo!Z`/@2@3oJ0e">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="4A]3%A5|Y!13B;;R.4@4">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text" id="w#k@c^m~i,*.L7xh.+6s">
+            <field name="TEXT">Introduce un número</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="y^~t3hL,+VZC6Yvp3{5z">
+        <value name="TEXT">
+          <shadow type="text" id="V2wg.=(SGQbMoql7M5:,">
+            <field name="TEXT">Hola mundo</field>
+          </shadow>
+          <block type="variables_get" id="mPKe=@$*|,CQU@H:rd4G">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

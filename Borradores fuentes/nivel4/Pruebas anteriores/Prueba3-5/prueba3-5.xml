@@ -1,0 +1,88 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="U@$H{-u3_h?uM(S76H,," x="-12" y="62">
+    <value name="TEXT">
+      <shadow type="text" id="uzujXg2W1%bxTt8mu0r[">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="math_arithmetic" id="gV01]q8saH6QUPCzB2c{">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <shadow type="math_number" id="hJ.s/^|RY]=,S4zA8vHO">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number" id="d/OhxAu$F+CE~SfFYUl@">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="+l]=Wig?DA8Yo$kJ?.44">
+        <value name="TEXT">
+          <shadow type="text" id="zOumg)gy;.S=$#?MU/cC">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="math_arithmetic" id="AEy(-i{v;v{4zWlhj^xQ">
+            <field name="OP">MINUS</field>
+            <value name="A">
+              <shadow type="math_number" id="xN,Z^|Ff97A:M[=xS5:(">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="Z%:}0YwDpP2T@@~$+#7?">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="HwB7,_^TX=D8Qs/J4Dnj">
+            <value name="TEXT">
+              <shadow type="text" id="W~00|3bV7)W@$F+)pmY3">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="math_arithmetic" id="X=-6*1OYs0JwIm=d8r`5">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <shadow type="math_number" id="%Lh`5%ayVA-FF_TTG+.;">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="Rab;TFe.*M[sgvvf]*P;">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="7KQXzH!cg4Y@T`[T[Rd~">
+                <value name="TEXT">
+                  <shadow type="text" id="f2PaOpw_Yjau#9{SL,@O">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="math_arithmetic" id="KZ`dvv:m0NLBAEjUw/%u">
+                    <field name="OP">DIVIDE</field>
+                    <value name="A">
+                      <shadow type="math_number" id="P+U:rZv_*r_NJV`dT`ML">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="CPR@gS`z@8KvA6W5u!wG">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,94 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="0QFue1jeU]ztpp0PK^KU" x="-62" y="63">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="yp[A3VqN;$o`PKo0GYng">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="i~*e-TDJ2Z.MFq9Y.Zqk">
+            <field name="TEXT">Introduce un número</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="k;ZWI_?Hkg-5QuwwDQs_">
+        <field name="VAR">y</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="d%ON.ex+:8nerxR:ef:U">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="+%by0_enzE+^=vg*M0|k">
+                <field name="TEXT">Introduce otro número</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="3nO3y4GG]1j5RoK((t7n">
+            <value name="IF0">
+              <block type="logic_compare" id="P`wn1,5FleKx$dr(1t$^">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="CAzn4]GnIDR|L(o#|s#Z">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="~,=Tc+@.Cp}]RfbG5R+a">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="text_print" id="xX)lXxkD6K?d69nNFi2e">
+                <value name="TEXT">
+                  <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text" id="~]-M^x7^+i:Ft}DRDhWG">
+                    <field name="TEXT">Los números son iguales</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="E0Evp?OH?J6B$MxqzUq8">
+                <value name="IF0">
+                  <block type="logic_compare" id=":+,R$RNf%f4ZO.Qr[|Ma">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="/0)WSC^+O*08`AWoowmA">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="NpHU_*c`4]Y3,[px|V$Q">
+                        <field name="VAR">y</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="text_print" id="|l547!^/4(5W+`qkKTkn">
+                    <value name="TEXT">
+                      <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text" id="%cYy-}p`?4|1#ovF?ryT">
+                        <field name="TEXT">Los números son distintos</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
