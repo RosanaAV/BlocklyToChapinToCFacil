@@ -1,0 +1,24 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="@B53WRSu+%s:Du+X6zmN" x="38" y="63">
+    <value name="TEXT">
+      <shadow type="text" id=":@}Nc#{Gi{Vi:Q]=.0Ep">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="math_number" id="f{l!^Mf}H:wA7|%1}oTj">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="y^~t3hL,+VZC6Yvp3{5z">
+        <value name="TEXT">
+          <shadow type="text" id="V2wg.=(SGQbMoql7M5:,">
+            <field name="TEXT">prueba</field>
+          </shadow>
+          <block type="text" id="vDlt1pq5ylbUH-XsQ4~L">
+            <field name="TEXT">Prueba con un número</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

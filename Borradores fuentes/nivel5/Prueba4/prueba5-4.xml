@@ -1,0 +1,54 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defreturn" id="T,$,JdY).ljsr[C;MCv7" x="63" y="38">
+    <mutation>
+      <arg name="x"></arg>
+      <arg name="y"></arg>
+      <arg name="z"></arg>
+    </mutation>
+    <field name="NAME">hola</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="text_print" id="*CuWXF}RY0ZrZ]Ni-j.,">
+        <value name="TEXT">
+          <shadow type="text" id="rlx=a~Awm)IhvZm*R$jt">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="m7Mm}](Kv!3:l/;#M}Ug">
+        <field name="VAR">x</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="F2]m-4CBB}1uRCwN|kPm" x="63" y="213">
+    <value name="TEXT">
+      <shadow type="text" id="L*RN8/ye$~{HNC/8FjNt">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="procedures_callreturn" id="`T]X1#U$3%i1fEvr(5uP">
+        <mutation name="hola">
+          <arg name="x"></arg>
+          <arg name="y"></arg>
+          <arg name="z"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="variables_get" id="4~k%@gcSk|2dY/Kd8cz/">
+            <field name="VAR">a</field>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="variables_get" id="TmDU8YL8$]$cW6?;.b82">
+            <field name="VAR">b</field>
+          </block>
+        </value>
+        <value name="ARG2">
+          <block type="variables_get" id="mjz92U^3-c:zXRV,SM2a">
+            <field name="VAR">c</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

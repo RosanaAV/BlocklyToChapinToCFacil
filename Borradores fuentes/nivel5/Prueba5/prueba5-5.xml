@@ -1,0 +1,156 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defreturn" id="XZLxEjHe;MTG@ap~WCaO" x="88" y="88">
+    <mutation>
+      <arg name="x"></arg>
+      <arg name="y"></arg>
+    </mutation>
+    <field name="NAME">máximo</field>
+    <comment pinned="false" h="80" w="160">Esta función recibe dos números y devuelve el mayor entre ambos.</comment>
+    <statement name="STACK">
+      <block type="controls_if" id=")W=R,zIanpP@5dQ/pYyt">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="G0f?|P[Sh3OQNFY^lVUc">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="bH|lJL},I4=PegH`)pZa">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get" id="2%:[;e_(K_ocK|zpp6#S">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="60wRBM#:/C$w;(nF=$0Y">
+            <field name="VAR">maximo</field>
+            <value name="VALUE">
+              <block type="variables_get" id="le3YC0g?lChidYr#5;HB">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="GTtfb`!Ly,%`lx02m;1Z">
+            <field name="VAR">maximo</field>
+            <value name="VALUE">
+              <block type="variables_get" id="@~(S$O/bEEX28`t9WTb!">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="NDI^d|%t)^4LS`Yvh*lG">
+        <field name="VAR">maximo</field>
+      </block>
+    </value>
+  </block>
+  <block type="variables_set" id="Xh?lbyKtg;tWIRCQ)+4x" x="88" y="288">
+    <field name="VAR">num1</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="!l`sCDtb.%fNYpS27-P]">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="`8fROhx-WvWPj7mcz1~m">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text" id="F7_HWKY.:8z]jx+3cEs3">
+            <field name="TEXT">Introduce un número</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="J:8__2I-y^JJ?A].WMiY">
+        <field name="VAR">num2</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="!ZN@m%XZC;e/T$Fn~Pg:">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="`8fROhx-WvWPj7mcz1~m">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text" id="_n]M?l~0hhzf)GPP$QYD">
+                <field name="TEXT">Introduce otro número</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="Qaavi?@N2O#KpREf5u}u">
+            <field name="VAR">num</field>
+            <value name="VALUE">
+              <block type="procedures_callreturn" id="]HvE1nxofRYeDmi@1JyO">
+                <mutation name="máximo">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="variables_get" id="2,xxHJx~_g[biAId7R/^">
+                    <field name="VAR">num1</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="variables_get" id="e51WNA`)4-`W%qHXlfMl">
+                    <field name="VAR">num2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="OG3,]5go5U*Ff}7eo9xg">
+                <value name="TEXT">
+                  <shadow type="text" id="~X/a)m?;wq]XY*Jx)~B|">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="4;$EFp}(^)zv|dowNKz]">
+                    <mutation items="6"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="f,l[~U_~HQZUZvcjD8MJ">
+                        <field name="TEXT">El máximo número entre </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id="A=C2[Y{%X{8(9f!9j!8_">
+                        <field name="VAR">num1</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="m%z*4l)iTnWW#_gj*gw,">
+                        <field name="TEXT"> y </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="variables_get" id="iUzqj%}%#~XaUXCWl;[q">
+                        <field name="VAR">num2</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="S!dI.aQSn928{I-_Xz]L">
+                        <field name="TEXT"> es </field>
+                      </block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="variables_get" id="j$ojsewu4Iz)fNU_A?wL">
+                        <field name="VAR">num</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

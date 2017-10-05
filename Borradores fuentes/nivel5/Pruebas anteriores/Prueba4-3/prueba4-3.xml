@@ -1,0 +1,319 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="T^N,,Z(IzwpNeaI2h`1i" x="-137" y="-137">
+    <mutation>
+      <arg name="a"></arg>
+      <arg name="b"></arg>
+      <arg name="c"></arg>
+    </mutation>
+    <field name="NAME">tipo_triangulo</field>
+    <comment pinned="false" h="80" w="160">Esta función recibe tres lados de un triángulo y muestra por pantalla de qué tipo de triángulo se trata, de un triángulo equilátero, isósceles o escaleno.</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="@#(ib!zyO`BRcg$/hQyX">
+        <value name="IF0">
+          <block type="logic_compare" id="8ZA.;tn)5@oeshQC;Moj">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="o:@~*vtlg@d2J%M3mf1C">
+                <field name="VAR">a</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="nS7Ecn,JO,sS8]7mBP_d">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="}[?+(TiJ1^ds.J~?/yg%">
+                    <field name="VAR">b</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="VVar2wWSCX(O~*QJyz`o">
+                    <field name="VAR">c</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="text_print" id="bg0(pfmq(xVUq}cx$8k3">
+            <value name="TEXT">
+              <shadow type="text" id="BmGtIOKX=[YhS9]|A;|I">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text" id=":bse*Vf%_B1tg_1Ma1|_">
+                <field name="TEXT">Es un triángulo equilatero</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="%O/+ufAjp,.8mH5KoX[y">
+            <value name="IF0">
+              <block type="logic_compare" id="Gjd_q|$(?B9-D_ak|`ms">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="logic_compare" id="JW(AXJY~)kCm?eO/yb6H">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="RF_tzOd[GzUd?GM3VWiC">
+                        <field name="VAR">a</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="RDhZ[:G~c1[S?Q8,zG;_">
+                        <field name="VAR">b</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="kP]b?:*{6SKFXruvHk2+">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="logic_compare" id="@Q{Bpp-byS+-,8yZ/j]_">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="{I)j;,c`7HDms5}!/o*K">
+                            <field name="VAR">b</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="I_kpRW#IAc=`S_~}-2Xf">
+                            <field name="VAR">c</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="nmd2+0|bK-@/7pU+x;M{">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="v]cBTcQf/XTIl,S/*YtZ">
+                            <field name="VAR">a</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="y4/nks90HbhM#c0TtFl+">
+                            <field name="VAR">c</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="text_print" id="}^xAgai7sE@s.L*T4GP|">
+                <value name="TEXT">
+                  <shadow type="text" id="BmGtIOKX=[YhS9]|A;|I">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text" id="_VrI``ZZBU6,ej_=b=u!">
+                    <field name="TEXT">Es un triángulo escaleno</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="HBeZi6acfHVF_dk~XRnk">
+                <value name="IF0">
+                  <block type="logic_compare" id="RVD88$P~2G/$JkG-kH[#">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="logic_compare" id="ERK)Si13-Wyr]t-M=fP@">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="xRh[!X19e,,!RNNmWtqE">
+                            <field name="VAR">a</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="$kn]?L`kI84@Z_!p8u[j">
+                            <field name="VAR">b</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="eBMKz_19J[{Axt35zQge">
+                        <field name="VAR">c</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="text_print" id="qyLqrfijP/Af7k=d+B{P">
+                    <value name="TEXT">
+                      <shadow type="text" id="BmGtIOKX=[YhS9]|A;|I">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text" id="t%OAnpLAs$Q/`90Q,X=C">
+                        <field name="TEXT">Es un triángulo isósceles</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="372uAWZD,f`d6)T#NB*w">
+                    <value name="IF0">
+                      <block type="logic_compare" id="IvVjjobRPm/,S2lDDAPW">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="logic_compare" id=";;aX/aQS=k.~i4fOS:wS">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="qjiUF|elLy!4yfsxp5wb">
+                                <field name="VAR">a</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="ozvLCG$+v]Zt.r;LpoV}">
+                                <field name="VAR">c</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="(Oc6_3)wwxi7]qZ|:7__">
+                            <field name="VAR">b</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="text_print" id="J@Of6K0OI;_L6iSyVss4">
+                        <value name="TEXT">
+                          <shadow type="text" id="BmGtIOKX=[YhS9]|A;|I">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="text" id="n;#Vbi!;Ij9c]=sN,`Mk">
+                            <field name="TEXT">Es un triángulo isósceles</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="@d}}D]7(Ro/O^(^5BJg9">
+                        <value name="IF0">
+                          <block type="logic_compare" id="#~Sr7$(rU3NmQ.u2:U;I">
+                            <field name="OP">NEQ</field>
+                            <value name="A">
+                              <block type="logic_compare" id="W#]Qfn6p?.^tbQMbN?kj">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="x%$_+BJ)P@^xg`Y)r;QG">
+                                    <field name="VAR">b</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id=";W!vu|p~xX=qQo,wQYME">
+                                    <field name="VAR">c</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="a|[~z/~^4GVtm6Mp++T_">
+                                <field name="VAR">a</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="text_print" id="U^9zR=cd,)+1|p6pz;0S">
+                            <value name="TEXT">
+                              <shadow type="text" id="BmGtIOKX=[YhS9]|A;|I">
+                                <field name="TEXT">abc</field>
+                              </shadow>
+                              <block type="text" id="m6K?rM,[E4x:74LR=3BI">
+                                <field name="TEXT">Es un triángulo isósceles</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="A:Iu)7?;Y;J0^XB$-Fe^" x="-137" y="363">
+    <field name="VAR">ladoA</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="nptx{N9y_Q{k[/t@L-a+">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="maElAkFl9Li@X[%2XKgH">
+            <field name="TEXT">Introduce un lado del triángulo</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="92aC7;/p@pQO]oPQ#~#Y">
+        <field name="VAR">ladoB</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id=",i0!uul-lwr@07b`Vk[G">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="@@@jv:g8D~oX2x94~*bM">
+                <field name="TEXT">Introduce un lado del triángulo</field>
+              </shadow>
+              <block type="text" id="*AClT|mIBDT24]_ayAd*">
+                <field name="TEXT">Introduce otro lado del triangulo</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="!}8U-y7N1,Z3+?53On$l">
+            <field name="VAR">ladoC</field>
+            <value name="VALUE">
+              <block type="text_prompt_ext" id="f*sH!RC(ZFBo.Q!~no{*">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <shadow type="text" id="1JtCu|.P`rMQ+jxY!ca|">
+                    <field name="TEXT">Introduce otro lado del triángulo</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="K$e@;e_1Q:aND`CnLH@]">
+                <mutation name="tipo_triangulo">
+                  <arg name="a"></arg>
+                  <arg name="b"></arg>
+                  <arg name="c"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="variables_get" id=")vmlfp8fS}-=2th06[=w">
+                    <field name="VAR">ladoA</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="variables_get" id="OzDU*Us@ktvS%{ipq|Jq">
+                    <field name="VAR">ladoB</field>
+                  </block>
+                </value>
+                <value name="ARG2">
+                  <block type="variables_get" id=")IY$sF)wY}r3zx_?By5z">
+                    <field name="VAR">ladoC</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

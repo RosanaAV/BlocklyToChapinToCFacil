@@ -1,0 +1,182 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="0)nWipG7xhz|/PDms.P5" x="-62" y="-162">
+    <mutation>
+      <arg name="a"></arg>
+      <arg name="b"></arg>
+    </mutation>
+    <field name="NAME">comprobar_numeros</field>
+    <comment pinned="false" h="80" w="160">Función que comprueba el primer valor respecto al segundo valor.</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="3nO3y4GG]1j5RoK((t7n">
+        <value name="IF0">
+          <block type="logic_compare" id="P`wn1,5FleKx$dr(1t$^">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="CAzn4]GnIDR|L(o#|s#Z">
+                <field name="VAR">a</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get" id="~,=Tc+@.Cp}]RfbG5R+a">
+                <field name="VAR">b</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="text_print" id="xX)lXxkD6K?d69nNFi2e">
+            <value name="TEXT">
+              <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text" id="~]-M^x7^+i:Ft}DRDhWG">
+                <field name="TEXT">Los números son iguales</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="E0Evp?OH?J6B$MxqzUq8">
+            <value name="IF0">
+              <block type="logic_compare" id=":+,R$RNf%f4ZO.Qr[|Ma">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="variables_get" id="/0)WSC^+O*08`AWoowmA">
+                    <field name="VAR">a</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="NpHU_*c`4]Y3,[px|V$Q">
+                    <field name="VAR">b</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="text_print" id="|l547!^/4(5W+`qkKTkn">
+                <value name="TEXT">
+                  <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text" id="%cYy-}p`?4|1#ovF?ryT">
+                    <field name="TEXT">Los números son distintos</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id=":s7*0RDkVogADCx{4;R?">
+                    <value name="IF0">
+                      <block type="logic_compare" id="wry%nx}mNcl/a[1$p4=$">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="variables_get" id="Out`hPcRH]RT;hi$uI5y">
+                            <field name="VAR">a</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="nc?NEAxMK.3]UZq3@~@=">
+                            <field name="VAR">b</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="text_print" id="f_i1ylSdQtG;4q#FH;^B">
+                        <value name="TEXT">
+                          <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="text" id="/FM[1SU^N1U4CK3o2#xi">
+                            <field name="TEXT">El primer valor es mayor que el segundo</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id=",Ak,os@a?!8d7h/(zGR#">
+                        <value name="IF0">
+                          <block type="logic_compare" id="8KqW+WL(JZy}yGK;jMvf">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="variables_get" id="/,fpaj+7f%o?PyDSoG+9">
+                                <field name="VAR">a</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="9ssF[W^+fo$MIIaZI?qT">
+                                <field name="VAR">b</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="text_print" id="N[RMy^J9Ue9iivL(L;Df">
+                            <value name="TEXT">
+                              <shadow type="text" id="1)]C6+gtPum9l;Fq36tw">
+                                <field name="TEXT">abc</field>
+                              </shadow>
+                              <block type="text" id="i5Cwl-dV=T=g2uD#9cE$">
+                                <field name="TEXT">El primer valor es menor que el segundo</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="0QFue1jeU]ztpp0PK^KU" x="-62" y="238">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="yp[A3VqN;$o`PKo0GYng">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="i~*e-TDJ2Z.MFq9Y.Zqk">
+            <field name="TEXT">Introduce un número</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="k;ZWI_?Hkg-5QuwwDQs_">
+        <field name="VAR">y</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="d%ON.ex+:8nerxR:ef:U">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="+%by0_enzE+^=vg*M0|k">
+                <field name="TEXT">Introduce otro número</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="de,p(uB|66+q:3DJ(q4.">
+            <mutation name="comprobar_numeros">
+              <arg name="a"></arg>
+              <arg name="b"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="variables_get" id="!)#*o)|O6`rNWZFuVM{I">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="variables_get" id="tN!+hNr7%ZWy#4(0hSiw">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

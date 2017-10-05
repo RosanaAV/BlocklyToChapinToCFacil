@@ -1,0 +1,24 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="y^~t3hL,+VZC6Yvp3{5z" x="38" y="89">
+    <value name="TEXT">
+      <shadow type="text" id="V2wg.=(SGQbMoql7M5:,">
+        <field name="TEXT">Hola mundo</field>
+      </shadow>
+      <block type="variables_get" id="mPKe=@$*|,CQU@H:rd4G">
+        <field name="VAR">x</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="n4qA};nN=k08p97A38dF">
+        <value name="TEXT">
+          <shadow type="text" id="V2wg.=(SGQbMoql7M5:,">
+            <field name="TEXT">Hola mundo</field>
+          </shadow>
+          <block type="text" id="C={]*Wi7(q.ZP:T^|}oJ">
+            <field name="TEXT">Prueba con una variable</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

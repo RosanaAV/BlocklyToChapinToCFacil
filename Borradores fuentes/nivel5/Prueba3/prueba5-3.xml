@@ -1,0 +1,22 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="dpU`SZY!^@+0?QWKl?Tl" x="288" y="163">
+    <value name="TEXT">
+      <shadow type="text" id="=7rjD-{K(9@3=03ytxwu">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="text_join" id="12ZIIog79K@~~x6aRcf?">
+        <mutation items="2"></mutation>
+        <value name="ADD0">
+          <block type="text" id="PX}ndqs]bb!**LJQeGWq">
+            <field name="TEXT">HOLA</field>
+          </block>
+        </value>
+        <value name="ADD1">
+          <block type="text" id="smG$j4$na9bat^tGYcih">
+            <field name="TEXT">ADIOS</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

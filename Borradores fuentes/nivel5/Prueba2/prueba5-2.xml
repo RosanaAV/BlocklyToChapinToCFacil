@@ -1,0 +1,35 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="qbK_|X?A{RnQ;[m2U!A4" x="63" y="38">
+    <field name="NAME">do something</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="text_print" id="Q#rf,2$@}SgUszGv7-~,">
+        <value name="TEXT">
+          <shadow type="text" id="UFt[yY`kx)L=,AR1PwoS">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  
+  
+  <block type="procedures_defreturn" id="lhZZ*C05t1AXr*o116xj" x="63" y="113">
+    <field name="NAME">do something2</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="text_print" id="Nipv--MtFWUO2`RI{Mv]">
+        <value name="TEXT">
+          <shadow type="text" id="zDtTI=uX(B94|}u}=h7z">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="py[m{L3[wzJx;gA+m6Cx">
+        <field name="VAR">x</field>
+      </block>
+    </value>
+  </block>
+</xml>
