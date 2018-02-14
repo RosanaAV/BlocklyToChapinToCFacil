@@ -1,0 +1,152 @@
+Para programar:
+  1º abrir una consola o terminal del SO (todas las instrucciones están para Linux-Ubuntu 14.04)
+$ uname -a
+Linux cauce 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+  2º Es opcional instalar un terminal más amigable (cambiar tamaño de fuente, dividir la ventana en varios terminales)
+$ sudo apt-get install terminator
+
+  3º comprobar que tenemos instalado el traductor del lenguaje (compilador de C) o instalarlo
+$ cc --version
+gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+  4º comprobar que tenemos instaladas herramientas auxiliares
+    a) para preprocesar programas
+$ cpp --version
+cpp (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+    b) para automatizar los procesos de traducción
+$ make --version
+GNU Make 3.81
+Copyright (C) 2006  Free Software Foundation, Inc.
+Este es software libre; consulte en el código fuente las condiciones de copia.
+NO hay garantía; ni siquiera para MERCANTIBILIDAD o EL CUMPLIMIENTO DE
+ALGÚN PROPÓSITO PARTICULAR.
+
+Este programa fue construido para x86_64-pc-linux-gnu
+
+    c) para dar una presentación más legible y homogénea al documento
+$ indent --version
+opción: version
+GNU indent 2.2.11
+
+    d) para leer las páginas del manual de ayuda
+$ man --version
+man 2.6.7.1
+
+    e) para editar programas con sintaxis
+$ gvim &
+  VIM - VI Mejorado
+  version 4.7.52
+
+  5º instalar las herramientas anteriores que falten
+$ sudo apt-get install gcc cpp make man vim-gnome
+
+  6º instalar las páginas de manual para desarrollo y para español
+$ sudo apt-get install manpages manpages-dev
+$ sudo apt-get install manpages-es manpages-es-extra
+$ sudo apt-get install vim-doc
+
+  7º crear los archivos de configuración: deben estar en $(HOME) o en cada directorio de trabajo
+    b) el archivo ./makefile de todos los directorios de trabajo debe de ser como el que se adjunta
+
+    c) el archivo ~/.indent.pro debe contener las líneas hasta -----
+//~/.indent.pro
+// Fichero de configuración de indent para las prácticas de Programación (2ºsem
+estre GºIng.Informática EPS-UBu)
+// v 2011/12 by CPA.LSI.IngCivil
+//   Esta obra está bajo una licencia Creative Commons Reconocimiento-NoComerci
+al 3.0 España. http://creativecommons.org/licenses/by-nc/3.0/es/
+	-nbad -bap -nbbb -sob
+/* !=	 -bad -nbap -bbb -nsob */
+	-nfc1 -nfca -ncdb -nsc -lc75	// -c33 -cd33 -cp33 -d0
+/* !=	 -fc1  -nfa  -cdb  -sc */
+	-br        -ce -cli2 -cdw  -ss -npcs -ncs -nsaf -nsai -nsaw -nprs -nbs
+/* !=	-bl -bli0 -nce      -ncdw -nss  -pcs  -cs  -saf  -sai  -saw  -prs  -bs 
+*/
+	-di8 -nbc -nbfda -nbfde -npsl -brs -brf	//-idN -djn -ndj
+/* !=	      -bc  -bfda  -bfde  -psl -bls -blf */
+	-i2 -ci4 -lp -pi1 -ip1 -ppi1     -il1 -ts8
+/* !=	        -nlp           -lps -nlps		*/
+	-l75 -bbo  -hnl
+/* !=	    -nbbo -nhnl */
+	-v
+
+/*opciones preconfiguradas para el proyecto gnu
+-gnu:	 -nbad !-saw  -bbo    -bap   -ncdb          -ip5         !-bl   !-pcs  
+       !-nsob -i2
+	!-saf   -nprs -hnl    -nfc1  -nsc     -di2               !-bli2 !-bls
+	!-sai   -lp           -nfca  -nbc    !-psl          -cp1 !-nce   -ndj  
+       !-cs		*/
+/*opciones preconfiguradas para el kernel de linux
+-linux:	 -nbad !-saw  -bbo    -bap   -ncdb    -d0   -ip0    -c33  -br    -npcs 
+-ci4    -sob  -i8  -l80
+	!-saf   -nprs -hnl    -nfc1  -nsc     -di1          -cd33 -ce    -brs  
+        -ss   -il1
+	!-sai   -lp           -nfca  -nbc     -npsl         -cp33 -cli0        
+        -ncs  -ts8	*/
+/*opciones preconfiguradas para la sintaxis original Kernighan & Ritchie
+-kr:	 -nbad !-saw  -bbo    -bap   -ncdb    -d0   -ip0    -c33  -br    -npcs 
+-ci4   !-nsob -i4  -l75
+	!-saf   -nprs -hnl    -nfc1  -nsc     -di1          -cd33 -ce    -brs  
+       !-nss
+	!-sai   -lp           -nfca  -nbc     -npsl         -cp33 -cli0        
+       !-cs		*/
+/*opciones preconfiguradas en la primera version del indent (Berkeley)
+-orig:	 -nbad !-saw  -bbo   !-nbap !-cdb           -ip4    -c33  -br    -npcs 
+-ci4   !-nsob -i4  -l75
+	!-saf   -nprs -hnl   !-fc1  !-sc      -di16         -cd33 -ce    -brs  
+       !-nss
+	!-sai   -lp          !-fca  !-bc     !-psl          -cp33 -cli0        
+              -ts8	*/
+-----
+
+    e1) el archivo de configuración ~/.exrc debe contener las líneas hasta -----
+"~/.exrc
+set enc=utf-8		"encoding
+set spell   spl=es,en	"spelllang
+set is			"incsearch	"busca según teclea
+set hls			"hlsearch	"resalta búsquedas
+set mps=(:),{:},[:],<:>	"matchpairs
+set mat=2		"matchtime
+set sm   sw=2		"showmatch,shiftwidth
+set ai   cin		"autoindent,cindent
+set et			"expandtab
+"set fdm=syntax		"foldmethod
+
+set stl=		"statusline
+set stl+=%n:				"nºbuffer
+set stl+=%<%f				"file full path
+set stl+=[%{''.(&fenc!=''?&fenc:&enc).''},%{&ff},%{&spelllang}]	"format
+set stl+=%m%r%h%w\ %=			"flags
+set stl+=%b\\x%02B%4l,%-8(%c%V%)	"car,line,col
+set stl+=%9P				" %
+set ls=2		"laststatus
+
+set number
+set makeprg=make\ %<.o
+map <F5> :wall:make:copen
+imap <F5> :wall:make:copen
+
+set guifont=Monospace\ 12
+-----
+donde para escribir <F5> se pulsa <CTRL+v> seguido de <F5>
+donde para escribir ^M se pulsa <CTRL+v> seguido de <INTRO>
+
+    e2) descargar de Internet los archivos de idioma
+~/.vim/spell/en.utf-8.spl
+~/.vim/spell/en.utf-8.sug
+~/.vim/spell/es.utf-8.spl
+~/.vim/spell/es.utf-8.sug
+
+  8º Funcionamiento
+$ make help     #muestra las opciones del make
+$ make setexe   #pregunta el nombre del ejecutable del programa a crear
+$ make          #ejecuta los pasos necesarios para crear y ejecutar el programa
+$ make entrega  #crea un comprimido en el directorio .. con todos los archivos de trabajo

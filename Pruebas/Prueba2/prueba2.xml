@@ -1,0 +1,38 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="kU[[71~L)AXuZr.Yev8)" x="13" y="38">
+    <field name="VAR">num</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id=")mSbEhG#U`MBw6I)GAel">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="!,NH:U6zq!Cm3r!#CeHi">
+            <field name="TEXT">Elige un número: 1 o 2</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print" id="R[j}4oq?E-jnevTc,R1u">
+        <value name="TEXT">
+          <shadow type="text" id="_D3kqFADwjxl(d{Bo!%v">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="r,-7hzC$M]p+WrP`##tG">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="Ztk$=j?HR,nM+9ulq^[4">
+                <field name="TEXT">El número elegido es </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="`l0_^}pHFJ9]0d6h%Qzy">
+                <field name="VAR">num</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,131 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defreturn" id="Lk?0@bgQVFUKaN6,d5S%" x="38" y="88">
+    <mutation>
+      <arg name="x"></arg>
+      <arg name="y"></arg>
+    </mutation>
+    <field name="NAME">maximo</field>
+    <comment pinned="false" h="80" w="160">Función que calcula el máximo entre dos números
+Entradas: num1 y num2
+    </comment>
+    <statement name="STACK">
+      <block type="controls_if" id="V4vfB3(xuYga8~$+=3*b">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="dgjIes0}ejfo9E#T*zmT">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="=zljiZ2f[{]*o?J}-)#7">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get" id="=fGe/y|{wD1g38Qt5q@e">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="2VHx?5.,9*Yi:_gAS(s=">
+            <field name="VAR">max</field>
+            <value name="VALUE">
+              <block type="variables_get" id="*LL%VX3~$OGMRG(pl%pR">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="UL!TOdL~B)0#PaMKV7Fo">
+            <field name="VAR">max</field>
+            <value name="VALUE">
+              <block type="variables_get" id="9ixz/n)2$V-O6:^(7Pq2">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="l(c8vbG$/]yGiCbpa/|P">
+        <field name="VAR">max</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="ZA*A+%/[qiFGy+_NuVKR" x="38" y="363">
+    <value name="TEXT">
+      <shadow type="text" id="!NbR^:wY0]%$ilvH4zwE">
+        <field name="TEXT">Programa que muestra el máximo de dos números</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="variables_set" id="94ZyX#hYL^NkOMEjpo2z">
+        <field name="VAR">num1</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="xG4L:^%QiH%+/0nnRlD}">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="+qZyAFxG?Kg*Eb=6GD,{">
+                <field name="TEXT">Introduzca un número</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="|(9|^AWWzW_Cr7Mz$_H|">
+            <field name="VAR">num2</field>
+            <value name="VALUE">
+              <block type="text_prompt_ext" id="-zRMWIrjUNnDNZ6y.ua4">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <shadow type="text" id="EclT+/BNRaO0UyKn{Rjr">
+                    <field name="TEXT">Introduzca otro número</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="u*Gm#GTK7_@ytev)APx(">
+                <value name="TEXT">
+                  <shadow type="text" id="zx-@E$xlxM`k06Ys%c)e">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="z_d.-^LT@[eM[0RgzC!]">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="v[lF=A6:7J(U*L,mTB|X">
+                        <field name="TEXT">El máximo de los dos números es </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="procedures_callreturn" id="7Mf6iWn$_vfg`gNY,6Fu">
+                        <mutation name="maximo">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="variables_get" id="{z]JP:HLyY~B]]lJTfN}">
+                            <field name="VAR">num1</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="variables_get" id="y|VXwCej3h])RCK]$+l+">
+                            <field name="VAR">num2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

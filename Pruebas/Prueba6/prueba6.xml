@@ -1,0 +1,154 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defreturn" id="|5[{+-mRR-M.o~HtPWV0" x="13" y="63">
+    <mutation>
+      <arg name="x"></arg>
+    </mutation>
+    <field name="NAME">factorial</field>
+    <comment pinned="false" h="80" w="160">Función que calcula el factorial de un número.
+Entrada: numero
+    </comment>
+    <statement name="STACK">
+      <block type="controls_if" id="aP+kc!3rZIm6!]=V:8~g">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="dOU:Z3OO|}}98_P*X)UY">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="/fT$Cg~KuW+NJ,%9g1lJ">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="#SD6*r:uy#k%l3$]}DzW">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="ibz`,;+F}/z*.P!)+jIh">
+            <field name="VAR">fact</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="1yxqc[-ku*GnD)DVUW3d">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <shadow type="math_number" id="OuR!{*gN54GiY4m}oOEs">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="~WHt}VM*tUr-$gQQ5Ml{">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="WtqP+%rteX.$azwKOcBq">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="procedures_callreturn" id="C2l?,T?hcc}@UD2%MCeU">
+                    <mutation name="factorial">
+                      <arg name="x"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_arithmetic" id="O+phkfgpj~ZW*)Ts2_x6">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id=".+*S;D@HMHm`gsr^A1DA">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="{0f,r^%.DZYsm^#j=kx^">
+                            <field name="VAR">x</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="hWvAtm~@o4vMya1Q6b:Q">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="{`7maP-B?^hKfql6mjON">
+            <field name="VAR">fact</field>
+            <value name="VALUE">
+              <block type="math_number" id="jvj`dp5qpUxa):mP?j.J">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="g`0-4%+K)NqlHMcvQ0#w">
+        <field name="VAR">fact</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="[6nU~!Rn]sZvM=?DCShM" x="13" y="313">
+    <value name="TEXT">
+      <shadow type="text" id="dYKshZdY~gVwsOtvnfS`">
+        <field name="TEXT">Programa que muestra el factorial de un número</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="variables_set" id="b)13POBoAA0G~CesylqF">
+        <field name="VAR">num</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="l:GP^EP1^FEU*!K:d?{^">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id="CC.YOMBjYd9mN*=tW@j9">
+                <field name="TEXT">Introduzca un número</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="-ih(oTWa+ss{C%g]R8h~">
+            <value name="TEXT">
+              <shadow type="text" id="_^#=5-;~A]U6s#qoNW2J">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_join" id="Og3sYw3[zQO1C/W}%19-">
+                <mutation items="4"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="m`c/L);jFvgDkQm#8:rT">
+                    <field name="TEXT">El factorial del número </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="x8g[#^:7M4Iq6A!@}/l#">
+                    <field name="VAR">num</field>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="text" id="ZxJ~B4OMO]p?Yu?kalKa">
+                    <field name="TEXT"> es </field>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="procedures_callreturn" id="s@DD+l^QsgfakW8%o:la">
+                    <mutation name="factorial">
+                      <arg name="x"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="variables_get" id=".oyJ|k[!zFl;T916$o{I">
+                        <field name="VAR">num</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

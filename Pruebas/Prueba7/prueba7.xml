@@ -1,0 +1,20 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id=";8obE~8.xeY7BCwkmC]^">num1</variable>
+    <variable type="" id="p7ARDzpuDipm$|hsNzB!">num2</variable>
+    <variable type="" id="uiMn,2~O9XN{5!atnnL-">x</variable>
+    <variable type="" id="m|kC0+z#0FE3I8N`o)~N">y</variable>
+    <variable type="" id="Kh:qG(]@Yj}g|OZJ7u$,">max</variable>
+    <variable type="" id="`boQd}KWbXy~GC+Xf[.M">XML</variable>
+  </variables>
+  <block type="text_print" id="Abvi$H6R~v@1Ds@Cmct~" x="88" y="113">
+    <value name="TEXT">
+      <shadow type="text" id="6k%FqgU7%sp~byM5EV4y">
+        <field name="TEXT">abc</field>
+      </shadow>
+      <block type="lists_create_with" id="B*xS!85w]rwt8fv%wXh.">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+</xml>

@@ -1,9 +1,0 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="text_print" id="Z9mYgBu~UcB5gzjX/n5h" x="-137" y="38">
-    <value name="TEXT">
-      <shadow type="text" id="~hC+d-,P9!xm*P(!LlWj">
-        <field name="TEXT">Hola mundo</field>
-      </shadow>
-    </value>
-  </block>
-</xml>

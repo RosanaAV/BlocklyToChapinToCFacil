@@ -1,0 +1,95 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="text_print" id="!pG*iVdP^M[_^7!8a?Xw" x="13" y="38">
+    <value name="TEXT">
+      <shadow type="text" id=")8I9amyYMBsyLQp{:x]p">
+        <field name="TEXT">Programa que calcula el perímetro de un rectángulo</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="variables_set" id="8=-n6:t$AZK51ZSSD+p@">
+        <field name="VAR">b</field>
+        <value name="VALUE">
+          <block type="text_prompt_ext" id="xGTqSl[e9,,vS8/]CvQ9">
+            <mutation type="NUMBER"></mutation>
+            <field name="TYPE">NUMBER</field>
+            <value name="TEXT">
+              <shadow type="text" id=".KPDxoinac^Ay!`Xi|-U">
+                <field name="TEXT">Introduzca la base</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="cga+cF.s($Xg[+`Ii_Yv">
+            <field name="VAR">h</field>
+            <value name="VALUE">
+              <block type="text_prompt_ext" id="{{_m=5!Sufss||geed?+">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <shadow type="text" id=",f9dVu`a9HuoYBMQf|qr">
+                    <field name="TEXT">Introduzca la altura</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="text_print" id="sfO[_Mk;;:F!prMPry@`">
+                <value name="TEXT">
+                  <shadow type="text" id="%*gf5d+m8]S-{1W~lje8">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="q=7Z{yq5^kFk1j:g8Z`V">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="}6GN@iDf}@vcx,+0q3Cb">
+                        <field name="TEXT">El perímetro del rectángulo es </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="math_arithmetic" id="E.pf[*v*?Tn,~QVsQzSe">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <shadow type="math_number" id="e|5Fq$N=IB|3.n/Bo4Gm">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="math_arithmetic" id="mW2Im(M:]!RZ3D#7+Am}">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number" id="Q[IL?zQ}g~ekY3I[!s}5">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="C]{AJO,KnM,H{9g-=/(A">
+                                <field name="VAR">b</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="}(JwJUQc6@;D`,:#bIY{">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="$6(bfxoxr+Hff^:Qvc^q">
+                                <field name="VAR">h</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="Va8/ZCWVi|Q=+F|Oj-}G">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="math_number" id="ZE8AH{//wl3zmX^%_X(}">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
