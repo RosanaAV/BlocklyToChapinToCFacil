@@ -17,7 +17,7 @@ asignaValorA(fact, productoNumeros(x,escribeNumero(factorial (restaNumeros(x,1))
 }else{
 asignaValorA(fact, 1);
 }
-return fact
+return fact;
 }
 
 PRG(){
