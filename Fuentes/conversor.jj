@@ -791,7 +791,7 @@ TOKEN :
 		//Después va al estado XML
 	< VRETURN: (~["<"])* > {
 			varReturn = new String(image);
-			escribir=escribir+(varReturn+"\n}");
+			escribir=escribir+(varReturn+";\n}");
 			llaves--;
 	} : XML	
 }
