@@ -93,7 +93,10 @@ $(EXE):  $(EXE).o $(OBJS)
 	$(CC)$< $(NOERR)
 	#$(DONE1)$@ COMPILADO OK           	$(DONE2)
 
-$(EXE).c:
+%.c:  %.xml
+	java -jar /home/conversor.jar < $< > $@
+	
+$(EXE).xml:
 	echo '//#define PROGRAMA    "DUMMY"	//TODO'>$@	#$(UP)
 	echo '//#define DESCRIPCION "no hago nada"      //TODO'>>$@	#$(UP)
 	echo '//#define AUTOR   "yo mismo"      //TODO'>>$@	#$(UP)
@@ -111,7 +114,9 @@ help:
 	#$(MA)-n [regla]$(KE)muestra los comandos para obtener una regla, sin
 	#$(BR)ejecutarlos.
 	#$(MA)setexe$(KE)actualiza «makefile» cambiando la regla con el nombre
-	#$(BR)del ejecutable.
+	#$(BR)del ejecutable, si existe archivo .xml lo convierte.
+	#$(MA)$(EXE).c$(KE)genera archivo «$(EXE).c», o sólo convierte el código
+	#$(BR)xml
 	#$(MA)$(EXE).o$(KE)crea/recrea el archivo objeto «$(EXE).o» compilando,
 	#$(BR)maquetando y versionando el archivo fuente si cambió.
 	#$(MA)$(EXE)$(KE)crea/recrea el archivo ejecutable «$(EXE)» enlazando
