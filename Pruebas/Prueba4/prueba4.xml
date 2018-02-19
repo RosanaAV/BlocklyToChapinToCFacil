@@ -1,87 +1,182 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="text_print" id="!pG*iVdP^M[_^7!8a?Xw" x="13" y="38">
+  <block type="procedures_defreturn" id="J/0^M^t*ZbPZIc[*_w!6" x="13" y="13">
+    <mutation>
+      <arg name="x"></arg>
+      <arg name="y"></arg>
+    </mutation>
+    <field name="NAME">perimetro</field>
+    <comment pinned="false" h="80" w="160">Función que calcula el perímetro de un rectángulo
+Entradas: base, altura
+    </comment>
+    <statement name="STACK">
+      <block type="variables_set" id="1`p3/x@{T{gy/na%sF}R">
+        <field name="VAR">per</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="~YspzYxJWZ(^4!9hiRK-">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="xHR_K6B)`ZT9WntvgtoT">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="zl-7O*6t+*F$)_{V6Wf2">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <shadow type="math_number" id="v6~vgpE-aGY0DqvqvH?_">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="dL#v_x({k+rM{{Z=bli*">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="nRPzyqi^3h(${N|T3[J4">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="3.MU3b~)%r5M@KboS3W}">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="_h@}8y5kmS*,Xve{~{/{">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="0;hn;KHXX`I-a`Isd4Nq">
+        <field name="VAR">per</field>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defreturn" id="}XJ]|%6MSmn{M_7nxyt(" x="13" y="138">
+    <mutation>
+      <arg name="x"></arg>
+      <arg name="y"></arg>
+    </mutation>
+    <field name="NAME">area</field>
+    <comment pinned="false" h="80" w="160">Función que calcula el ñarea de un rectángulo
+Entradas: base, altura
+    </comment>
+    <statement name="STACK">
+      <block type="variables_set" id="l1r3*m]PM9uLG#4^jD$p">
+        <field name="VAR">ar</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="U$9{^dxD5_`6[iuL^RO,">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="ZL((IQ$gTb*LaR_L7P+M">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="!N6AIaJ5v~,)5P;(r:zh">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="iX0[A`Q{Db:j,}5h-P`M">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="6o-CyPz)nqlOyyV+$~qw">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get" id="rRIxW7I*]H%;lG+Mr6;O">
+        <field name="VAR">ar</field>
+      </block>
+    </value>
+  </block>
+  <block type="text_print" id="{{8(m,c~TR2{mN`uk.eD" x="13" y="338">
     <value name="TEXT">
-      <shadow type="text" id=")8I9amyYMBsyLQp{:x]p">
-        <field name="TEXT">Programa que calcula el perímetro y área de un rectángulo</field>
+      <shadow type="text" id="5Y)M*jJ%@Lp|-M8Sx)f*">
+        <field name="TEXT">Programa que calcula el perímetro y el área de un rectángulo</field>
       </shadow>
     </value>
     <next>
-      <block type="variables_set" id="8=-n6:t$AZK51ZSSD+p@">
+      <block type="variables_set" id="mc!jxJl.++M!jWk9Ms;*">
         <field name="VAR">b</field>
         <value name="VALUE">
-          <block type="text_prompt_ext" id="xGTqSl[e9,,vS8/]CvQ9">
+          <block type="text_prompt_ext" id="y8hn2DMACPE8UqklLlmY">
             <mutation type="NUMBER"></mutation>
             <field name="TYPE">NUMBER</field>
             <value name="TEXT">
-              <shadow type="text" id=".KPDxoinac^Ay!`Xi|-U">
+              <shadow type="text" id="tLCBZFWc;)Z[qgLpS0cM">
                 <field name="TEXT">Introduzca la base</field>
               </shadow>
             </value>
           </block>
         </value>
         <next>
-          <block type="variables_set" id="cga+cF.s($Xg[+`Ii_Yv">
+          <block type="variables_set" id="BAij^fw$IUHt:Gnm_L3z">
             <field name="VAR">h</field>
             <value name="VALUE">
-              <block type="text_prompt_ext" id="{{_m=5!Sufss||geed?+">
+              <block type="text_prompt_ext" id="7Isls,=6J#P*x5]Qk/O7">
                 <mutation type="NUMBER"></mutation>
                 <field name="TYPE">NUMBER</field>
                 <value name="TEXT">
-                  <shadow type="text" id=",f9dVu`a9HuoYBMQf|qr">
+                  <shadow type="text" id="@^pq(57rH)U:)7hW;N/M">
                     <field name="TEXT">Introduzca la altura</field>
                   </shadow>
                 </value>
               </block>
             </value>
             <next>
-              <block type="text_print" id="sfO[_Mk;;:F!prMPry@`">
+              <block type="text_print" id="=f$v30!@$:f0AjMW~Nfz">
                 <value name="TEXT">
-                  <shadow type="text" id="%*gf5d+m8]S-{1W~lje8">
+                  <shadow type="text" id="3`5_@hyOIvN$NgN?OlCF">
                     <field name="TEXT">abc</field>
                   </shadow>
-                  <block type="text_join" id="q=7Z{yq5^kFk1j:g8Z`V">
+                  <block type="text_join" id="`,tK2HIyFPnsntGtJ`N=">
                     <mutation items="4"></mutation>
                     <value name="ADD0">
-                      <block type="text" id="}6GN@iDf}@vcx,+0q3Cb">
+                      <block type="text" id="l1[DV#g;$TZG6;moDa_y">
                         <field name="TEXT">El perímetro del rectángulo es </field>
                       </block>
                     </value>
                     <value name="ADD1">
-                      <block type="procedures_callreturn" id="aE!_%[Oy5X1J^IW7X25O">
+                      <block type="procedures_callreturn" id="$2[:Ji#sM8-p@7T-)/r^">
                         <mutation name="perimetro">
                           <arg name="x"></arg>
                           <arg name="y"></arg>
                         </mutation>
                         <value name="ARG0">
-                          <block type="variables_get" id="-bj1FpAl06n%BYVk*j|M">
+                          <block type="variables_get" id="~j.x@%8lu1bu(r#aehx{">
                             <field name="VAR">b</field>
                           </block>
                         </value>
                         <value name="ARG1">
-                          <block type="variables_get" id="1G-?4E+1hXCeLjT(STQ.">
+                          <block type="variables_get" id="{1/[ekmEK%|9YJ8J}Bdr">
                             <field name="VAR">h</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="ADD2">
-                      <block type="text" id="k[sC9:{(Q_B{m[]ZQYGk">
-                        <field name="TEXT"> y el área es </field>
+                      <block type="text" id="koeQ1$zx[eZH;K0_yUa`">
+                        <field name="TEXT"> y su área es </field>
                       </block>
                     </value>
                     <value name="ADD3">
-                      <block type="procedures_callreturn" id="eEAV!+%BseUc+~,Ee./?">
+                      <block type="procedures_callreturn" id="Lq2oEdTceG5puy(MB%lm">
                         <mutation name="area">
                           <arg name="x"></arg>
                           <arg name="y"></arg>
                         </mutation>
                         <value name="ARG0">
-                          <block type="variables_get" id="W!)1+.seJ{n4xI~[,4a7">
+                          <block type="variables_get" id=";*-wTwHeCPL8FR)*czGk">
                             <field name="VAR">b</field>
                           </block>
                         </value>
                         <value name="ARG1">
-                          <block type="variables_get" id="=_CemhC1s`}6QEKh+xjP">
+                          <block type="variables_get" id="0|72^ZY@{e0QE~^YAo|0">
                             <field name="VAR">h</field>
                           </block>
                         </value>
@@ -95,89 +190,5 @@
         </next>
       </block>
     </next>
-  </block>
-  <block type="procedures_defreturn" id="Hy3+mDhJwzhfg_agavp/" x="38" y="363">
-    <mutation>
-      <arg name="x"></arg>
-      <arg name="y"></arg>
-    </mutation>
-    <field name="NAME">perimetro</field>
-    <comment pinned="false" h="80" w="160">Describe esta función...</comment>
-    <statement name="STACK">
-      <block type="variables_set" id="7(1=zFbRw(Um|nc/o$2,">
-        <field name="VAR">per</field>
-        <value name="VALUE">
-          <block type="math_arithmetic" id="E.pf[*v*?Tn,~QVsQzSe">
-            <field name="OP">MULTIPLY</field>
-            <value name="A">
-              <shadow type="math_number" id="e|5Fq$N=IB|3.n/Bo4Gm">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="math_arithmetic" id="mW2Im(M:]!RZ3D#7+Am}">
-                <field name="OP">ADD</field>
-                <value name="A">
-                  <shadow type="math_number" id="Q[IL?zQ}g~ekY3I[!s}5">
-                    <field name="NUM">1</field>
-                  </shadow>
-                  <block type="variables_get" id="C]{AJO,KnM,H{9g-=/(A">
-                    <field name="VAR">x</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <shadow type="math_number" id="}(JwJUQc6@;D`,:#bIY{">
-                    <field name="NUM">1</field>
-                  </shadow>
-                  <block type="variables_get" id="$6(bfxoxr+Hff^:Qvc^q">
-                    <field name="VAR">y</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <value name="B">
-              <shadow type="math_number" id="Va8/ZCWVi|Q=+F|Oj-}G">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="math_number" id="ZE8AH{//wl3zmX^%_X(}">
-                <field name="NUM">2</field>
-              </block>
-            </value>
-          </block>
-        </value>
-      </block>
-    </statement>
-    <value name="RETURN">
-      <block type="variables_get" id="IS}NxL*DO()1KVDseJgS">
-        <field name="VAR">per</field>
-      </block>
-    </value>
-  </block>
-  <block type="procedures_defreturn" id="tyXm~vHaVYd4~}MO0lAX" x="38" y="513">
-    <mutation>
-      <arg name="x"></arg>
-      <arg name="y"></arg>
-    </mutation>
-    <field name="NAME">area</field>
-    <comment pinned="false" h="80" w="160">Describe esta función...</comment>
-    <value name="RETURN">
-      <block type="math_arithmetic" id="lf]C*;)ZQM#2O([;jDId">
-        <field name="OP">MULTIPLY</field>
-        <value name="A">
-          <shadow type="math_number" id="~!I^t!:P7*ooiwg4vkx!">
-            <field name="NUM">1</field>
-          </shadow>
-          <block type="variables_get" id="#1*~kQ)nndEv^h[8|f8z">
-            <field name="VAR">x</field>
-          </block>
-        </value>
-        <value name="B">
-          <shadow type="math_number" id="@/ij1JXC2ixqLhdYPKHh">
-            <field name="NUM">1</field>
-          </shadow>
-          <block type="variables_get" id="!g;@0//k7ha8)uy$rKM;">
-            <field name="VAR">y</field>
-          </block>
-        </value>
-      </block>
-    </value>
   </block>
 </xml>
