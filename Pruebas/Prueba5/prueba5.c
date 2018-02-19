@@ -17,7 +17,7 @@ asignaValorA(max, x);
 }else{
 asignaValorA(max, y);
 }
-return max
+return max;
 }
 
 PRG(){
